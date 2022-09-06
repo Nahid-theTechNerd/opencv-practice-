@@ -26,6 +26,7 @@ def webcam():
 
     while True:  # To show each frame as an image
         success, img = capture.read()
+        img = cv2.flip(img, 1)  # Flip image ( Flip value 0 is for vertical and 1 is for horizontal -1 is for both)
         cv2.imshow("Output", img)
         if cv2.waitKey(1) & 0xFF == ord('q'):  # press 'q' to quit
             break
